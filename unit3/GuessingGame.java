@@ -19,6 +19,7 @@ public class GuessingGame {
      */
     public static void main(String[] args) {
         haiku();
+        
         Scanner console = new Scanner(System.in);
         playGame(console);
         console.close();
