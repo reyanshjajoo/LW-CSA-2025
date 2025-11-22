@@ -9,7 +9,7 @@ public class DaysInWeek {
         System.out.println("Enter day (1-31): ");
         int day = console.nextInt();
 
-        String dayOfWeek = daysInWeek(year, month, day);
+        String dayOfWeek = dayInWeek(year, month, day);
         System.out.println("The day of the week is: " + dayOfWeek);
         console.close();
     }
