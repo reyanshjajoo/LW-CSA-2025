@@ -1,0 +1,19 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "unit2/CafeArt/CafeArt/lib/drawing-lib-2.0-shaded.jar",
+        "unit4/FracCalc/lib/assertj-core-3.24.2.jar",
+        "FracCalc/lib/assertj-core-3.24.2.jar",
+        "FracCalc/lib/junit-jupiter-api-5.10.0.jar",
+        "FracCalc/lib/junit-jupiter-params-5.10.0.jar"
+    ],
+
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "C:/Program Files/Eclipse Adoptium/jdk-25.0.0.36-hotspot",
+      "default": true
+    }
+  ]
+
+}
