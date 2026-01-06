@@ -82,4 +82,5 @@ public class FracCalc {
         return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
     }
 
+    // TODO: Fill in the space below with any helper methods that you think you will need
 }
