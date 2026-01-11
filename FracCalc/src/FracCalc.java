@@ -2,15 +2,15 @@ package src;
 import java.util.Scanner;
 
 /**
- * @author Reyansh Jajoo
+ * @author Saanvi Tiwari
  * @period 3
- * @date 12/5/2025
- * This program performs calculations on fractions.
+ * @date 1-10-2026
+ * This program performs fraction calculations such as adding and subtracting fractions.
  */
 
 public class FracCalc {
 
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         // create scanner
         Scanner console = new Scanner(System.in);
@@ -27,18 +27,10 @@ public class FracCalc {
         }
         console.close();
     }
-    
+
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
-    // This function takes a String 'input' and produces the result
-    //
-    // input is a fraction string that needs to be evaluated.  For your program, this will be the user input.
-    //      e.g. input ==> "1/2 + 3/4"
-    //        
-    // The function should return the result of the fraction after it has been calculated
-    //      e.g. return ==> "1_1/4"
     public static String produceAnswer(String input)
-    { 
-        // Break input into three parts: first operand, operator, second operand
+    {
         String[] parts = input.trim().split("\\s+");
         String firstOperand = "";
         String operator = "";
@@ -48,39 +40,83 @@ public class FracCalc {
             firstOperand = parts[0];
             operator = parts[1];
             secondOperand = parts[2];
-        } else if (parts.length == 2) {
-            firstOperand = parts[0];
-            operator = parts[1];
-            secondOperand = "";
+        } else {
+            return "0/1";
         }
 
-        // Parse second operand -> whole, numerator, denominator
+        int[] f1 = parseOperand(firstOperand);
+        int[] f2 = parseOperand(secondOperand);
+
+        int n1 = f1[0];
+        int d1 = f1[1];
+        int n2 = f2[0];
+        int d2 = f2[1];
+
+        int resultNum;
+        int resultDen;
+
+        switch (operator) {
+            case "+":
+                resultNum = n1 * d2 + n2 * d1;
+                resultDen = d1 * d2;
+                break;
+            case "-":
+                resultNum = n1 * d2 - n2 * d1;
+                resultDen = d1 * d2;
+                break;
+            case "*":
+                resultNum = n1 * n2;
+                resultDen = d1 * d2;
+                break;
+            case "/":
+                resultNum = n1 * d2;
+                resultDen = d1 * n2;
+                break;
+            default:
+                return "0/1";
+        }
+
+        if (resultDen < 0) {
+            resultDen = -resultDen;
+            resultNum = -resultNum;
+        }
+
+        return resultNum + "/" + resultDen;
+    }
+
+    /**
+     * Parses a string operand into its numerator and denominator.
+     * @param operand the string operand
+     * @return an array: first element is numerator, second is denominator
+     */
+    private static int[] parseOperand(String operand) {
         int whole = 0;
         int numerator = 0;
         int denominator = 1;
 
-        // Only parse if second operand is not empty
-        if (!secondOperand.isEmpty()) {
-            if (secondOperand.contains("_")) {
-                String[] mixedParts = secondOperand.split("_");
-                whole = Integer.parseInt(mixedParts[0]);
-                String[] fractionParts = mixedParts[1].split("/");
-                numerator = Integer.parseInt(fractionParts[0]);
-                denominator = Integer.parseInt(fractionParts[1]);
-            }
-            else if (secondOperand.contains("/")) {
-                String[] fractionParts = secondOperand.split("/");
-                numerator = Integer.parseInt(fractionParts[0]);
-                denominator = Integer.parseInt(fractionParts[1]);
-            }
-            else {
-                whole = Integer.parseInt(secondOperand);
-            }
+        if (operand.contains("_")) {
+            String[] mixed = operand.split("_");
+            whole = Integer.parseInt(mixed[0]);
+
+            String[] fraction = mixed[1].split("/");
+            numerator = Integer.parseInt(fraction[0]);
+            denominator = Integer.parseInt(fraction[1]);
+
+            int sign = (whole < 0) ? -1 : 1;
+            int absWhole = Math.abs(whole);
+            int improper = sign * (absWhole * denominator + numerator);
+            return new int[] { improper, denominator };
         }
+        else if (operand.contains("/")) {
+            String[] fraction = operand.split("/");
+            numerator = Integer.parseInt(fraction[0]);
+            denominator = Integer.parseInt(fraction[1]);
 
-        // return parsed values
-        return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
+            return new int[] { numerator, denominator };
+        }
+        else {
+            whole = Integer.parseInt(operand);
+            return new int[] { whole, 1 };
+        }
     }
-
-    // TODO: Fill in the space below with any helper methods that you think you will need
 }
