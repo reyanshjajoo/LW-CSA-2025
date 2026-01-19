@@ -2,7 +2,7 @@ package src;
 import java.util.Scanner;
 
 /**
- * @author Saanvi Tiwari
+ * @author Reyansh Jajoo
  * @period 3
  * @date 1-10-2026
  * This program performs fraction calculations such as adding and subtracting fractions.
@@ -119,4 +119,13 @@ public class FracCalc {
             return new int[] { whole, 1 };
         }
     }
+
+    private static int gcd(int a, int b) {
+    while (b != 0) {
+        int t = a % b;
+        a = b;
+        b = t;
+    }
+    return a;
+}
 }
