@@ -81,8 +81,32 @@ public class FracCalc {
             resultNum = -resultNum;
         }
 
-        return resultNum + "/" + resultDen;
+        int[] finalNum = toMixedNumber(resultNum, resultDen);
+        if (finalNum[1] == 0) {
+            return Integer.toString(finalNum[0]);
+        } else if (finalNum[0] == 0) {
+            return finalNum[1] + "/" + finalNum[2];
+        } else {
+            return finalNum[0] + "_" + finalNum[1] + "/" + finalNum[2];
+        }
     }
+
+    /**
+     * Converts an improper fraction to a mixed number.
+     * @param numerator the numerator of the improper fraction
+     * @param denominator the denominator of the improper fraction
+     * @return an array: first element is whole number, second is numerator, third is denominator
+     */
+    private static int[] toMixedNumber(int numerator, int denominator) {
+        int whole = numerator / denominator;
+        int remainder = Math.abs(numerator % denominator);
+
+        int gcd = gcd(remainder, denominator);
+        remainder /= gcd;
+        denominator /= gcd;
+
+        return new int[] { whole, remainder, denominator };
+    }   
 
     /**
      * Parses a string operand into its numerator and denominator.

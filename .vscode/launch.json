@@ -1,0 +1,35 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "PictureExplorer",
+            "request": "launch",
+            "mainClass": "src.main.PictureExplorer",
+            "projectName": "LW-CSA-2025_32709cf3"
+        },
+        {
+            "type": "java",
+            "name": "PictureExplorer",
+            "request": "launch",
+            "mainClass": "PictureExplorer",
+            "projectName": "LW-CSA-2025_32709cf3"
+        },
+        {
+            "type": "java",
+            "name": "PictureExplorer",
+            "request": "launch",
+            "mainClass": "AP5PictureLab.src.main.PictureExplorer",
+            "projectName": "LW-CSA-2025_32709cf3"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        }
+    ]
+}

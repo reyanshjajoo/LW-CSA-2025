@@ -1,11 +1,7 @@
 {
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "unit2/CafeArt/CafeArt/lib/drawing-lib-2.0-shaded.jar",
-        "unit4/FracCalc/lib/assertj-core-3.24.2.jar",
-        "FracCalc/lib/assertj-core-3.24.2.jar",
-        "FracCalc/lib/junit-jupiter-api-5.10.0.jar",
-        "FracCalc/lib/junit-jupiter-params-5.10.0.jar"
+      "c:\\Users\\Reyansh Jajoo\\OneDrive - Lake Washington School District\\High School\\10th Grade\\School\\3- AP CSA\\LW-CSA-2025\\lib\\junit-platform-console-standalone-1.13.0-M3.jar",
+      "c:\\Users\\Reyansh Jajoo\\OneDrive - Lake Washington School District\\High School\\10th Grade\\School\\3- AP CSA\\LW-CSA-2025\\FracCalc\\lib\\assertj-core-3.24.2.jar"
     ],
 
   "java.configuration.runtimes": [
@@ -14,6 +10,9 @@
       "path": "C:/Program Files/Eclipse Adoptium/jdk-25.0.0.36-hotspot",
       "default": true
     }
+  ],
+  "java.project.sourcePaths": [
+    "unit5\\AP5PictureLab"
   ]
 
 }
