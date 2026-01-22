@@ -22,31 +22,31 @@ public class A5_Tests {
         return Stream.of(
             Arguments.of(
                 /* QUESTION 1: */ "Open Picture.java and look for the method getPixels2D. Is it there?",
-                "<your answer>", // TODO: Replace with your answer containing either "Yes" or "No"
+                "No", // TODO: Replace with your answer containing either "Yes" or "No"
                 "7fa3b767c460b54a2be4d490"),
             Arguments.of(
                 /* QUESTION 2: */ "Open SimplePicture.java and look for the method getPixels2D. Is it there?",
-                "<your answer>", // TODO: Replace with your answer containing either "Yes" or "No"
+                "Yes", // TODO: Replace with your answer containing either "Yes" or "No"
                 "5c0a611b41b08f1209506350"),
             Arguments.of(
                 /* QUESTION 3: */ "Does the following code compile?> DigitalPicture p = new DigitalPicture();",
-                "<your answer>", // TODO: Replace with your answer containing either "Yes" or "No"
+                "Yes", // TODO: Replace with your answer containing either "Yes" or "No"
                 "a6105c0a611b41b08f120950"),
             Arguments.of(
                 /* QUESTION 4: */ "Does the following code compile?> DigitalPicture p = new SimplePicture();",
-                "<your answer>", // TODO: Replace with your answer containing either "Yes" or "No"
+                "Yes", // TODO: Replace with your answer containing either "Yes" or "No"
                 "611b41b08f1209506350279e"),
             Arguments.of(
                 /* QUESTION 5: */ "Does the following code compile?> DigitalPicture p = new Picture();",
-                "<your answer>", // TODO: Replace with your answer containing either "Yes" or "No"
+                "Yes", // TODO: Replace with your answer containing either "Yes" or "No"
                 "c0a611b41b08f12095063502"),
             Arguments.of(
                 /* QUESTION 6: */ "Does the following code compile?> SimplePicture p = new Picture();",
-                "<your answer>", // TODO: Replace with your answer containing either "Yes" or "No"
+                "Yes", // TODO: Replace with your answer containing either "Yes" or "No"
                 "105c0a611b41b08f12095063"),
             Arguments.of(
                 /* QUESTION 7: */ "Does the following code compile?> Picture p = new SimplePicture();",
-                "<your answer>", // TODO: Replace with your answer containing either "Yes" or "No"
+                "No", // TODO: Replace with your answer containing either "Yes" or "No"
                 "c460b54a2be4d49030b349c7")
         );
     }

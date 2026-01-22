@@ -20,15 +20,15 @@ public class A1_Tests {
         return Stream.of(
             Arguments.of(
                 /* QUESTION 1: */ "How many bits does it take to represent the values from 0 to 255?",
-                "<your answer>",  // TODO: Replace with your answer as a string containing the number (i.e "0")
+                "8",  // TODO: Replace with your answer as a string containing the number (i.e "0")
                 "c9f0f895fb98ab9159f51fd0297e236d"),
             Arguments.of(
                 /* QUESTION 2: */ "How many bytes does it take to represent a color in the RGB color model?",
-                "<your answer>", // TODO: Replace with your answer as a string containing the number (i.e "0")
+                "4", // TODO: Replace with your answer as a string containing the number (i.e "0")
                 "a87ff679a2f3e71d9181a67b7542122c"),
             Arguments.of(
                 /* QUESTION 3: */ "How many pixels are in a picture that is 640 pixels wide and 480 pixels high?",
-                "<your answer>", // TODO: Replace with your answer as a string containing the number (i.e "0")
+                "307200", // TODO: Replace with your answer as a string containing the number (i.e "0")
                 "8624b0a6670e42d51952dd8da3df746a")
         );
     }

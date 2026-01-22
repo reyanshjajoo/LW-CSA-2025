@@ -24,11 +24,11 @@ public class A7_Tests {
         return Stream.of(
             Arguments.of(
                 /* QUESTION 1: */ "How many times would the first nested for() loop execute? (see spec)",
-                "<your answer>", // TODO: Replace with your answer as a string containing the number (i.e "0")
+                "90", // TODO: Replace with your answer as a string containing the number (i.e "0")
                 "8613985ec49eb8f757ae6439e879bb2a"),
             Arguments.of(
                 /* QUESTION 2: */ "How many times would the second nested for() loop execute? (see spec)",
-                "<your answer>", // TODO: Replace with your answer as a string containing the number (i.e "0")
+                "112", // TODO: Replace with your answer as a string containing the number (i.e "0")
                 "7f6ffaa6bb0b408017b62254211691b5")
         );
     }

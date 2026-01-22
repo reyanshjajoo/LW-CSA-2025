@@ -90,30 +90,57 @@ public class IntArrayWorker {
 
     /**
      * TODO: Activity 4, Exercise 1.
-     * Method returning the count of the number of times a passed integer value is found in the matrix.
+     * Method returning the count of the number of times a passed integer value is
+     * found in the matrix.
+     * 
      * @param num - number to search for
      * @return the count of the number of times the number was found in the matrix.
      */
     public int getCount(int num) {
-        throw new RuntimeException("Replace with your code for Activity 4, Exercise 1.");
+        int count = 0;
+        for (int[] row : matrix) {
+            for (int n : row) {
+                if (n == num) {
+                    count++;
+                }
+            }
+        }
+
+        return count;
     }
 
     /**
      * TODO: Activity 4, Exercise 2.
      * Method returning the largest value in the matrix.
+     * 
      * @return the largest value in the matrix.
      */
     public int getLargest() {
-        throw new RuntimeException("Replace with your code for Activity 4, Exercise 2.");
+        int largest = matrix[0][0];
+        for (int[] row : matrix) {
+            for (int num : row) {
+                if (num > largest) {
+                    largest = num;
+                }
+            }
+        }
+        return largest;
     }
 
     /**
      * TODO: Activity 4, Exercise 3.
      * Method returning the total of all integers in a specified column.
+     * 
      * @param col - the column for which to calculate the total.
-     * @return the total of all 
+     * @return the total of all
      */
     public int getColTotal(int col) {
-        throw new RuntimeException("Replace with your code for Activity 4, Exercise 2.");
+        int total = 0;
+
+        for (int row = 0; row < matrix.length; row++) {
+            total += matrix[row][col];
+        }
+
+        return total;
     }
 }

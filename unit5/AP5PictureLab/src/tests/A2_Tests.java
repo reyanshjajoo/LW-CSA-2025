@@ -21,23 +21,23 @@ public class A2_Tests {
         return Stream.of(
             Arguments.of(
                 /* QUESTION 1: */ "How can you make pink?",
-                "<your answer>",  // TODO: Replace with your answer containing the R,G,B components, separated by comma (i.e. "1,2,3")
+                "255,188,193",  // TODO: Replace with your answer containing the R,G,B components, separated by comma (i.e. "1,2,3")
                 "MjU1LDE5MiwyMDM="),
             Arguments.of(
                 /* QUESTION 2: */ "How can you make yellow?",
-                "<your answer>", // TODO: Replace with your answer containing the comma-separated "R,G,B" numbers (i.e. "1,2,3")
+                "255,255,0", // TODO: Replace with your answer containing the comma-separated "R,G,B" numbers (i.e. "1,2,3")
                 "MjU1LDI1NSww"),
             Arguments.of(
                 /* QUESTION 3: */ "How can you make purple?",
-                "<your answer>", // TODO: Replace with your answer containing the comma-separated "R,G,B" numbers (i.e. "1,2,3")
+                "136,0,177", // TODO: Replace with your answer containing the comma-separated "R,G,B" numbers (i.e. "1,2,3")
                 "MTQwLDIwLDE4OA=="),
             Arguments.of(
                 /* QUESTION 4: */ "How can you make white?",
-                "<your answer>", // TODO: Replace with your answer containing the comma-separated "R,G,B" numbers (i.e. "1,2,3")
+                "255,255,255", // TODO: Replace with your answer containing the comma-separated "R,G,B" numbers (i.e. "1,2,3")
                 "MjU1LDI1NSwyNTU="),
             Arguments.of(
                 /* QUESTION 5: */ "How can you make dark gray?",
-                "<your answer>", // TODO: Replace with your answer containing the comma-separated "R,G,B" numbers (i.e. "1,2,3")
+                "50,50,50", // TODO: Replace with your answer containing the comma-separated "R,G,B" numbers (i.e. "1,2,3")
                 "NjQsNjQsNjQ=")
         );
     }

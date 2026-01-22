@@ -1,7 +1,7 @@
 {
     "java.project.referencedLibraries": [
-      "c:\\Users\\Reyansh Jajoo\\OneDrive - Lake Washington School District\\High School\\10th Grade\\School\\3- AP CSA\\LW-CSA-2025\\lib\\junit-platform-console-standalone-1.13.0-M3.jar",
-      "c:\\Users\\Reyansh Jajoo\\OneDrive - Lake Washington School District\\High School\\10th Grade\\School\\3- AP CSA\\LW-CSA-2025\\FracCalc\\lib\\assertj-core-3.24.2.jar"
+      "c:\\Users\\Reyansh Jajoo\\OneDrive - Lake Washington School District\\High School\\10th Grade\\School\\3- AP CSA\\LW-CSA-2025\\FracCalc\\lib\\assertj-core-3.24.2.jar",
+      "test-lib\\**\\*.jar"
     ],
 
   "java.configuration.runtimes": [
@@ -12,7 +12,10 @@
     }
   ],
   "java.project.sourcePaths": [
-    "unit5\\AP5PictureLab"
+    "unit5\\AP5PictureLab",
+    "FracCalc",
+    "Magpie",
+    "lib"
   ]
 
 }
