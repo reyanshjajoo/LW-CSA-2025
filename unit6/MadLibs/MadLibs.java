@@ -4,11 +4,13 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class MadLibs {
+    private static final String BASE_PATH = "C:\\Users\\Reyansh Jajoo\\OneDrive - Lake Washington School District\\High School\\10th Grade\\School\\3- AP CSA\\LW-CSA-2025\\unit6\\MadLibs\\files\\";
+
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
         printIntro();
         String action = "";
-        while (!action.toLowerCase().equals("q")){
+        while (!action.toLowerCase().equals("q")) {
             System.out.print("(C)reate mad-lib, (V)iew mad-lib, (Q)uit? ");
             action = console.nextLine();
             if (action.toLowerCase().equals("c")) {
@@ -27,14 +29,16 @@ public class MadLibs {
      */
     public static void printIntro() {
         System.out.println("""
-                           Welcome to the game of Mad Libs. I
-                           will ask you to provide various words
-                           and phrases to fill in a story.
-                           The result will be written to an output file. \n""");
+                Welcome to the game of Mad Libs. I
+                will ask you to provide various words
+                and phrases to fill in a story.
+                The result will be written to an output file. \n""");
     }
 
     /**
-     * Prompts the user for file name until they provide one that exists in the directory
+     * Prompts the user for file name until they provide one that exists in the
+     * directory
+     * 
      * @param console
      * @return the input file name
      */
@@ -43,7 +47,7 @@ public class MadLibs {
         while (true) {
             String fileName = console.nextLine();
 
-            File f = new File("C:\\Users\\Reyansh Jajoo\\OneDrive - Lake Washington School District\\High School\\10th Grade\\School\\3- AP CSA\\LW-CSA-2025\\unit6\\MadLibs\\files\\" + fileName);
+            File f = new File(BASE_PATH + fileName);
 
             if (f.exists() && f.isFile()) {
                 return fileName;
@@ -55,6 +59,7 @@ public class MadLibs {
 
     /**
      * Prompts the user for an output file name and returns it.
+     * 
      * @param console
      * @return the output file name
      */
@@ -64,14 +69,16 @@ public class MadLibs {
     }
 
     /**
-     * Reads the input file, prompts the user for words to replace the placeholders, and writes the final story to the output file.
-     * @param fileName the name of the input file
+     * Reads the input file, prompts the user for words to replace the placeholders,
+     * and writes the final story to the output file.
+     * 
+     * @param fileName       the name of the input file
      * @param outputFileName the name of the output file
-     * @param console the Scanner
+     * @param console        the Scanner
      */
     public static void modifyFile(String fileName, String outputFileName, Scanner console) {
         System.out.println();
-        File file = new File("C:\\Users\\Reyansh Jajoo\\OneDrive - Lake Washington School District\\High School\\10th Grade\\School\\3- AP CSA\\LW-CSA-2025\\unit6\\MadLibs\\files\\" + fileName);
+        File file = new File(BASE_PATH + fileName);
 
         String finalText = "";
 
@@ -81,6 +88,7 @@ public class MadLibs {
                 String[] words = line.split(" ");
                 String newLine = "";
                 for (String word : words) {
+                    String toAdd = word;
                     if (word.charAt(0) == '<' && word.charAt(word.length() - 1) == '>') {
                         String aAn = "aeiouAEIOU".indexOf(word.charAt(1)) != -1 ? "an" : "a";
                         String prompt = word.substring(1, word.length() - 1);
@@ -88,19 +96,23 @@ public class MadLibs {
                             prompt = String.join(" ", prompt.split("-"));
                         }
                         System.out.print("Please enter " + aAn + " " + prompt + ": ");
-                        String userInput = console.nextLine();
-                        newLine += userInput + " ";
-                    } else {
-                        newLine += word + " ";
+                        toAdd = console.nextLine();
                     }
+                    boolean isPunctuation = ".,!?;:".contains(toAdd);
+                    if (!newLine.equals("") && !isPunctuation) {
+                        newLine += " ";
+                    }
+                    newLine += toAdd;
                 }
-                finalText += newLine.trim() + "\n";
+
+                finalText += newLine + "\n";
+
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
 
-        try (PrintWriter writer = new PrintWriter("C:\\Users\\Reyansh Jajoo\\OneDrive - Lake Washington School District\\High School\\10th Grade\\School\\3- AP CSA\\LW-CSA-2025\\unit6\\MadLibs\\files\\" + outputFileName)) {
+        try (PrintWriter writer = new PrintWriter(BASE_PATH + outputFileName)) {
             writer.print(finalText);
         } catch (FileNotFoundException e) {
             System.out.println("Error writing to file.");
@@ -110,11 +122,12 @@ public class MadLibs {
 
     /**
      * Reads the specified file and prints its contents to the console.
+     * 
      * @param fileName the name of the file to view
      */
     public static void viewFile(String fileName) {
         System.out.println();
-        File file = new File("C:\\Users\\Reyansh Jajoo\\OneDrive - Lake Washington School District\\High School\\10th Grade\\School\\3- AP CSA\\LW-CSA-2025\\unit6\\MadLibs\\files\\" + fileName);
+        File file = new File(BASE_PATH + fileName);
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
@@ -123,5 +136,6 @@ public class MadLibs {
         } catch (FileNotFoundException e) {
             System.out.println("File not found.");
         }
+        System.out.println();
     }
 }
