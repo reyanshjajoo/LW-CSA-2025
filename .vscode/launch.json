@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MadLibs",
+            "request": "launch",
+            "mainClass": "MadLibs",
+            "projectName": "LW-CSA-2025_32709cf3"
+        },
+        {
+            "type": "java",
             "name": "PictureExplorer",
             "request": "launch",
             "mainClass": "src.main.PictureExplorer",

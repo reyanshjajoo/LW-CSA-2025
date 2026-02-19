@@ -1,0 +1,4 @@
+Once upon a time, <name> was sitting at a <noun> shop. 
+He got up and <verb> a <noun> .
+He thought the <noun> was too <adjective> so he <verb-with-ed> it.
+Then, he <verb> . The end.
